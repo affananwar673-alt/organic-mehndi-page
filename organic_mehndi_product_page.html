@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#244b36">
+  <meta name="description" content="Discover the ingredients, preparation details, and care instructions for our henna mehndi.">
+  <title>Root & Ritual | Henna Mehndi</title>
+  <style>
+    :root {
+      --forest: #244b36;
+      --forest-dark: #173324;
+      --sage: #dfe8d8;
+      --cream: #faf7ef;
+      --paper: #fffdf8;
+      --ink: #25332a;
+      --muted: #657267;
+      --gold: #b58a4b;
+      --line: #e8e2d5;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: var(--cream);
+      font-family: Arial, Helvetica, sans-serif; line-height: 1.65;
+    }
+    a { color: inherit; }
+    .announcement {
+      text-align: center; background: var(--forest-dark); color: #fff;
+      padding: 8px 14px; font-size: 12px; letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 20px max(6%, calc((100% - 1120px)/2));
+      background: var(--paper); border-bottom: 1px solid var(--line);
+    }
+    .brand { font-family: Georgia, 'Times New Roman', serif; color: var(--forest); }
+    .brand strong { display: block; font-size: 23px; letter-spacing: .04em; }
+    .brand span { font-size: 10px; text-transform: uppercase; letter-spacing: .22em; }
+    nav { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; }
+    nav a { text-decoration: none; }
+    .hero {
+      max-width: 1120px; margin: auto; padding: 64px 24px 58px;
+      display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 42px;
+    }
+    .eyebrow { color: var(--gold); font-size: 11px; font-weight: bold; letter-spacing: .2em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; line-height: 1.15; }
+    h1 { font-size: clamp(38px, 5vw, 62px); color: var(--forest); margin: 14px 0 18px; }
+    h2 { font-size: clamp(29px, 4vw, 42px); color: var(--forest); margin: 8px 0 18px; }
+    .hero p { max-width: 520px; color: var(--muted); }
+    .button {
+      display: inline-block; margin-top: 14px; padding: 13px 21px;
+      border-radius: 3px; background: var(--forest); color: white;
+      text-decoration: none; font-size: 13px; letter-spacing: .04em;
+    }
+    .visual {
+      min-height: 350px; border-radius: 46% 46% 4px 4px;
+      background: linear-gradient(145deg, #dfe7d4, #f3e8d1);
+      display: flex; align-items: center; justify-content: center;
+      padding: 28px; text-align: center; position: relative; overflow: hidden;
+      border: 1px solid #d6ddcb;
+    }
+    .visual:before, .visual:after {
+      content: ""; position: absolute; border: 1px solid rgba(36,75,54,.2);
+      border-radius: 50%; width: 250px; height: 250px;
+    }
+    .visual:after { width: 310px; height: 310px; }
+    .jar {
+      z-index: 1; width: min(230px, 85%); padding: 28px 18px;
+      background: rgba(255,253,248,.94); border: 1px solid #d3c8b2;
+      box-shadow: 0 16px 40px rgba(44,57,38,.12);
+    }
+    .jar .leaf { font-size: 38px; }
+    .jar b { display: block; font: 25px Georgia, serif; color: var(--forest); margin: 10px 0; }
+    .jar small { font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
+    .section { padding: 66px 24px; }
+    .section-inner { max-width: 1000px; margin: auto; }
+    .center { text-align: center; }
+    .intro { max-width: 680px; margin: 0 auto 32px; color: var(--muted); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 30px; }
+    .card { background: var(--paper); border: 1px solid var(--line); padding: 24px; }
+    .card .number { color: var(--gold); font-size: 12px; letter-spacing: .15em; }
+    .card h3 { color: var(--forest); font-size: 23px; margin: 12px 0 8px; }
+    .card p { color: var(--muted); font-size: 14px; margin-bottom: 0; }
+    .tint { background: var(--sage); }
+    .ingredient-box {
+      max-width: 760px; margin: 28px auto 0; background: var(--paper);
+      padding: 28px; border: 1px solid #d1dccb; text-align: left;
+    }
+    .ingredient-box ul { padding-left: 20px; }
+    .notice {
+      background: #fff4df; border-left: 3px solid var(--gold);
+      padding: 12px 15px; font-size: 13px; color: #594a32;
+    }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+    .step { border-top: 1px solid var(--gold); padding-top: 16px; }
+    .step h3 { color: var(--forest); font-size: 22px; margin: 8px 0; }
+    .step p { font-size: 14px; color: var(--muted); }
+    .contact { background: var(--forest); color: #fff; text-align: center; }
+    .contact h2 { color: #fff; }
+    .contact p { color: #e0e8df; }
+    .contact a { color: #fff; }
+    footer { text-align: center; padding: 20px; font-size: 12px; color: var(--muted); }
+    @media (max-width: 720px) {
+      header { align-items: flex-start; flex-direction: column; padding: 18px 22px; }
+      nav { gap: 14px; }
+      .hero { grid-template-columns: 1fr; padding-top: 42px; gap: 26px; }
+      .visual { min-height: 290px; }
+      .cards, .steps { grid-template-columns: 1fr; }
+      .section { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">Nature-inspired care · Ingredient transparency</div>
+  <header>
+    <div class="brand">
+      <strong>ROOT &amp; RITUAL</strong>
+      <span>Henna • Care • Tradition</span>
+    </div>
+    <nav aria-label="Main navigation">
+      <a href="#story">Our Story</a>
+      <a href="#ingredients">Ingredients</a>
+      <a href="#how-to-use">How to Use</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">A closer look at your mehndi</div>
+        <h1>Tradition, with nothing left unclear.</h1>
+        <p>Welcome to our product transparency page. Explore the ingredients, preparation details, and care instructions for our henna mehndi.</p>
+        <a class="button" href="#ingredients">Explore the ingredients ↓</a>
+      </div>
+      <div class="visual" role="img" aria-label="Illustrated placeholder for a henna product">
+        <div class="jar">
+          <div class="leaf">❧</div>
+          <small>Our Henna</small>
+          <b>MEHNDI</b>
+          <small>Ingredients disclosed clearly</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="story">
+      <div class="section-inner center">
+        <div class="eyebrow">Our approach</div>
+        <h2>Know what goes on your skin.</h2>
+        <p class="intro">We believe customers should be able to understand what a product contains and how to use it. This page is designed to share the real details of our mehndi—not vague promises.</p>
+        <div class="cards">
+          <article class="card">
+            <span class="number">01 / INGREDIENTS</span>
+            <h3>Clear information</h3>
+            <p>See the full ingredient list once it has been confirmed for this product.</p>
+          </article>
+          <article class="card">
+            <span class="number">02 / PROCESS</span>
+            <h3>How it's prepared</h3>
+            <p>Learn about the preparation and handling steps actually used to make each batch.</p>
+          </article>
+          <article class="card">
+            <span class="number">03 / CUSTOMER CARE</span>
+            <h3>Use it thoughtfully</h3>
+            <p>Read the application, storage, and patch-test guidance before use.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tint" id="ingredients">
+      <div class="section-inner center">
+        <div class="eyebrow">What's inside</div>
+        <h2>Ingredients &amp; sourcing</h2>
+        <p class="intro">We will list each ingredient and, where known, its source and purpose. The details below are placeholders and must be replaced before this page is shared with customers.</p>
+        <div class="ingredient-box">
+          <h3>Ingredient list</h3>
+          <ul>
+            <li><strong>[Ingredient 1]</strong> — [source or purpose]</li>
+            <li><strong>[Ingredient 2]</strong> — [source or purpose]</li>
+            <li><strong>[Ingredient 3, if applicable]</strong> — [source or purpose]</li>
+          </ul>
+          <p><strong>Batch / lot number:</strong> [Add batch number, if applicable]</p>
+          <p><strong>Made on:</strong> [Add date, if applicable]</p>
+          <p><strong>Best before:</strong> [Add verified shelf-life information]</p>
+          <div class="notice"><strong>Before publishing:</strong> Replace every bracketed field with accurate product information. Remove any ingredient that is not used. Do not claim certification or “100% organic” unless you can substantiate that claim.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-to-use">
+      <div class="section-inner center">
+        <div class="eyebrow">Product guidance</div>
+        <h2>Before you apply</h2>
+        <p class="intro">Follow the instructions on your actual product label. These general reminders do not replace product-specific directions.</p>
+        <div class="steps">
+          <div class="step">
+            <span class="number">STEP 01</span>
+            <h3>Patch test</h3>
+            <p>Test a small area as directed by the product label before wider use. Do not use if irritation occurs.</p>
+          </div>
+          <div class="step">
+            <span class="number">STEP 02</span>
+            <h3>Check the label</h3>
+            <p>Read all ingredients and directions. Avoid use if you know you are sensitive to any listed ingredient.</p>
+          </div>
+          <div class="step">
+            <span class="number">STEP 03</span>
+            <h3>Store safely</h3>
+            <p>Use the storage conditions and shelf life specified for your product and batch.</p>
+          </div>
+        </div>
+        <p class="notice" style="max-width:760px;margin:28px auto 0;text-align:left;">Do not use a product on skin if its ingredients are unknown. Avoid “black henna” products that may contain PPD, which can cause serious skin reactions.</p>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="section-inner">
+        <div class="eyebrow">Questions about this product?</div>
+        <h2>We're happy to help.</h2>
+        <p>Contact us for ingredient, batch, or product-care questions.</p>
+        <p><strong>Brand:</strong> [Your brand name]</p>
+        <p><strong>WhatsApp / Phone:</strong> [Add business contact]</p>
+        <p><strong>Instagram:</strong> [Add business profile, if available]</p>
+      </div>
+    </section>
+  </main>
+  <footer>© <span id="year">2026</span> Root &amp; Ritual · Product information page</footer>
+</body>
+</html>
